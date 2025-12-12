@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: n8n
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    disk:
+      name: n8n_data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: GENERIC_TIMEZONE
+        value: "America/Argentina/Buenos_Aires"
